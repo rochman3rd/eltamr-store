@@ -1,0 +1,1108 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>El Tamr Store - Kurma Premium Berkualitas</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Playfair+Display:wght@400;500;600&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary: #8B4513; /* Coklat kurma */
+            --secondary: #D2691E; /* Coklat kemerahan */
+            --accent: #F4A460; /* Coklat muda */
+            --light: #FFF8F0; /* Krem muda */
+            --dark: #3E2723; /* Coklat tua */
+            --success: #2E7D32; /* Hijau sukses */
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Poppins', sans-serif;
+            background-color: var(--light);
+            color: var(--dark);
+            line-height: 1.6;
+        }
+        
+        .container {
+            width: 100%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        /* Header Styles */
+        header {
+            background-color: white;
+            box-shadow: 0 3px 15px rgba(0, 0, 0, 0.08);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            padding: 15px 0;
+        }
+        
+        .header-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+        
+        .logo-icon {
+            color: var(--primary);
+            font-size: 32px;
+        }
+        
+        .logo-text h1 {
+            font-family: 'Playfair Display', serif;
+            font-size: 28px;
+            font-weight: 600;
+            color: var(--primary);
+            line-height: 1.2;
+        }
+        
+        .logo-text span {
+            font-size: 14px;
+            color: var(--secondary);
+            font-weight: 400;
+        }
+        
+        /* Navigation */
+        nav ul {
+            display: flex;
+            list-style: none;
+            gap: 25px;
+        }
+        
+        nav a {
+            text-decoration: none;
+            color: var(--dark);
+            font-weight: 500;
+            font-size: 16px;
+            transition: all 0.3s;
+            position: relative;
+        }
+        
+        nav a:hover {
+            color: var(--primary);
+        }
+        
+        nav a::after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            background: var(--primary);
+            left: 0;
+            bottom: -5px;
+            transition: width 0.3s;
+        }
+        
+        nav a:hover::after {
+            width: 100%;
+        }
+        
+        .whatsapp-header {
+            background-color: #25D366;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 30px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            font-size: 15px;
+        }
+        
+        .whatsapp-header:hover {
+            background-color: #128C7E;
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(37, 211, 102, 0.2);
+        }
+        
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(rgba(62, 39, 35, 0.85), rgba(62, 39, 35, 0.9)), url('https://asset.kompas.com/crops/0YlAFm81LNFkgo649lcqpRLyoqg=/0x0:0x0/750x500/data/photo/2023/03/31/6426a20b32b47.jpg');
+            background-size: cover;
+            background-position: center;
+            color: white;
+            padding: 120px 0;
+            text-align: center;
+        }
+        
+        .hero h2 {
+            font-family: 'Playfair Display', serif;
+            font-size: 48px;
+            margin-bottom: 20px;
+            font-weight: 600;
+        }
+        
+        .hero p {
+            font-size: 18px;
+            max-width: 700px;
+            margin: 0 auto 30px;
+            opacity: 0.9;
+        }
+        
+        /* Products Section */
+        .section-title {
+            text-align: center;
+            margin: 80px 0 50px;
+        }
+        
+        .section-title h2 {
+            font-family: 'Playfair Display', serif;
+            font-size: 36px;
+            color: var(--primary);
+            margin-bottom: 15px;
+            position: relative;
+            display: inline-block;
+        }
+        
+        .section-title h2::after {
+            content: '';
+            position: absolute;
+            width: 80px;
+            height: 3px;
+            background: var(--accent);
+            bottom: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+        
+        .section-title p {
+            color: #666;
+            max-width: 600px;
+            margin: 0 auto;
+            font-size: 16px;
+        }
+        
+        .products-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 40px;
+            margin-bottom: 80px;
+        }
+        
+        .product-card {
+            background-color: white;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+            transition: all 0.4s ease;
+            position: relative;
+        }
+        
+        .product-card:hover {
+            transform: translateY(-15px);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.12);
+        }
+        
+        .product-badge {
+            position: absolute;
+            top: 15px;
+            right: 15px;
+            background: var(--primary);
+            color: white;
+            padding: 5px 15px;
+            border-radius: 20px;
+            font-size: 12px;
+            font-weight: 600;
+            z-index: 2;
+        }
+        
+        .product-image {
+            height: 250px;
+            width: 100%;
+            background-size: cover;
+            background-position: center;
+        }
+        
+        .product-info {
+            padding: 25px;
+        }
+        
+        .product-name {
+            font-family: 'Playfair Display', serif;
+            font-size: 24px;
+            margin-bottom: 10px;
+            color: var(--dark);
+        }
+        
+        .product-description {
+            color: #666;
+            margin-bottom: 20px;
+            font-size: 15px;
+        }
+        
+        /* Price Table */
+        .price-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-bottom: 25px;
+            background: var(--light);
+            border-radius: 10px;
+            overflow: hidden;
+        }
+        
+        .price-table th {
+            background-color: var(--primary);
+            color: white;
+            padding: 12px;
+            text-align: left;
+            font-weight: 500;
+        }
+        
+        .price-table td {
+            padding: 12px;
+            border-bottom: 1px solid #eee;
+        }
+        
+        .price-table tr:last-child td {
+            border-bottom: none;
+        }
+        
+        .price-table .weight {
+            font-weight: 500;
+        }
+        
+        .price-table .price {
+            color: var(--primary);
+            font-weight: 600;
+            font-size: 18px;
+        }
+        
+        .whatsapp-product {
+            background-color: #25D366;
+            color: white;
+            border: none;
+            width: 100%;
+            padding: 15px;
+            border-radius: 10px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+            font-size: 16px;
+        }
+        
+        .whatsapp-product:hover {
+            background-color: #128C7E;
+        }
+        
+        /* Benefits Section */
+        .benefits {
+            background-color: white;
+            padding: 80px 0;
+        }
+        
+        .benefits-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+        }
+        
+        .benefit-card {
+            text-align: center;
+            padding: 30px;
+            background: var(--light);
+            border-radius: 10px;
+            transition: all 0.3s;
+        }
+        
+        .benefit-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+        }
+        
+        .benefit-icon {
+            font-size: 40px;
+            color: var(--primary);
+            margin-bottom: 20px;
+        }
+        
+        .benefit-card h3 {
+            margin-bottom: 15px;
+            color: var(--dark);
+        }
+        
+        /* Testimonials */
+        .testimonials-slider {
+            display: flex;
+            gap: 30px;
+            overflow-x: auto;
+            padding: 20px 0 40px;
+            scrollbar-width: thin;
+        }
+        
+        .testimonial-card {
+            min-width: 300px;
+            background: white;
+            padding: 30px;
+            border-radius: 15px;
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.05);
+        }
+        
+        .testimonial-rating {
+            color: #FFC107;
+            margin-bottom: 15px;
+        }
+        
+        .testimonial-text {
+            font-style: italic;
+            margin-bottom: 20px;
+            color: #555;
+        }
+        
+        .testimonial-author {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+        
+        .author-avatar {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            background-color: var(--accent);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+            color: white;
+        }
+        
+        /* How to Order */
+        .steps-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 30px;
+            margin: 50px 0 80px;
+        }
+        
+        .step-card {
+            text-align: center;
+            padding: 30px 20px;
+            position: relative;
+        }
+        
+        .step-number {
+            width: 50px;
+            height: 50px;
+            background: var(--primary);
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 22px;
+            font-weight: bold;
+            margin: 0 auto 20px;
+        }
+        
+        /* CTA Section */
+        .cta-section {
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            color: white;
+            text-align: center;
+            padding: 80px 20px;
+            border-radius: 20px;
+            margin: 80px 0;
+        }
+        
+        .cta-section h2 {
+            font-family: 'Playfair Display', serif;
+            font-size: 42px;
+            margin-bottom: 20px;
+        }
+        
+        .cta-buttons {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            margin-top: 30px;
+            flex-wrap: wrap;
+        }
+        
+        .cta-button {
+            padding: 15px 30px;
+            border-radius: 30px;
+            font-weight: 600;
+            font-size: 16px;
+            cursor: pointer;
+            transition: all 0.3s;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+        }
+        
+        .cta-primary {
+            background-color: white;
+            color: var(--primary);
+            border: none;
+        }
+        
+        .cta-primary:hover {
+            background-color: var(--light);
+            transform: translateY(-3px);
+        }
+        
+        .cta-secondary {
+            background-color: transparent;
+            color: white;
+            border: 2px solid white;
+        }
+        
+        .cta-secondary:hover {
+            background-color: rgba(255, 255, 255, 0.1);
+        }
+        
+        /* Footer */
+        footer {
+            background-color: var(--dark);
+            color: white;
+            padding: 60px 0 30px;
+        }
+        
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 40px;
+            margin-bottom: 40px;
+        }
+        
+        .footer-column h3 {
+            font-family: 'Playfair Display', serif;
+            font-size: 22px;
+            margin-bottom: 20px;
+            color: var(--accent);
+        }
+        
+        .footer-column ul {
+            list-style: none;
+        }
+        
+        .footer-column ul li {
+            margin-bottom: 12px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        
+        .footer-column a {
+            color: #ddd;
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+        
+        .footer-column a:hover {
+            color: var(--accent);
+        }
+        
+        .copyright {
+            text-align: center;
+            padding-top: 30px;
+            border-top: 1px solid #444;
+            color: #aaa;
+            font-size: 14px;
+        }
+        
+        /* Responsive */
+        @media (max-width: 992px) {
+            .header-container {
+                flex-direction: column;
+                gap: 20px;
+            }
+            
+            nav ul {
+                flex-wrap: wrap;
+                justify-content: center;
+            }
+            
+            .hero h2 {
+                font-size: 36px;
+            }
+        }
+        
+        @media (max-width: 768px) {
+            .products-container {
+                grid-template-columns: 1fr;
+            }
+            
+            .hero {
+                padding: 80px 0;
+            }
+            
+            .section-title h2 {
+                font-size: 30px;
+            }
+            
+            .cta-section h2 {
+                font-size: 32px;
+            }
+            
+            .cta-buttons {
+                flex-direction: column;
+                align-items: center;
+            }
+            
+            .cta-button {
+                width: 100%;
+                max-width: 300px;
+            }
+        }
+        
+        @media (max-width: 480px) {
+            .product-card {
+                max-width: 100%;
+            }
+            
+            nav ul {
+                gap: 15px;
+            }
+            
+            nav a {
+                font-size: 14px;
+            }
+        }
+        
+        /* Easy Update Section */
+        .update-info {
+            background: #f9f9f9;
+            padding: 20px;
+            border-radius: 10px;
+            margin: 30px 0;
+            border-left: 4px solid var(--primary);
+        }
+        
+        .update-info h4 {
+            color: var(--primary);
+            margin-bottom: 10px;
+        }
+        
+        .update-info code {
+            background: #eee;
+            padding: 2px 6px;
+            border-radius: 4px;
+            font-family: monospace;
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="logo">
+            <div class="logo">
+                <div class="logo-img"style="background: https://www.canva.com/design/DAG9_M_soOU/mrzPxhmtdF_iMvK-sBWRPw/view?utm_content=DAG9_M_soOU&utm_campaign=designshare&utm_medium=link2&utm_source=uniquelinks&utlId=h6e88b114b9">
+                    <i class="fas fa-seedling"></i>
+                </div>
+                <div class="logo-text">
+                    <h1>El Tamr Store</h1>
+                    <span>Kurma Premium Berkualitas</span>
+                </div>
+            </div>
+            
+            <nav>
+                <ul>
+                    <li><a href="#home">Beranda</a></li>
+                    <li><a href="#products">Produk</a></li>
+                    <li><a href="#benefits">Manfaat</a></li>
+                    <li><a href="#testimonials">Testimoni</a></li>
+                    <li><a href="#order">Cara Pesan</a></li>
+                </ul>
+            </nav>
+            
+            <button class="whatsapp-header" id="header-whatsapp">
+                <i class="fab fa-whatsapp"></i> +62 822-4211-7086
+            </button>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero" id="home">
+        <div class="container">
+            <h2>Kurma Premium Pilihan Terbaik</h2>
+            <p>Rasakan kenikmatan kurma berkualitas langsung dari sumber terbaik. Segar, manis alami, dan penuh nutrisi untuk kesehatan Anda dan keluarga.</p>
+            <button class="cta-button cta-primary" id="hero-whatsapp">
+                <i class="fab fa-whatsapp"></i> Pesan via WhatsApp
+            </button>
+        </div>
+    </section>
+
+    <!-- Products Section -->
+    <section id="products">
+        <div class="container">
+            <div class="section-title">
+                <h2>Produk Unggulan Kami</h2>
+                <p>Tersedia dalam berbagai ukuran untuk kebutuhan Anda</p>
+            </div>
+            
+            <!-- Product 1: Kurma Sukari -->
+            <div class="products-container">
+                <div class="product-card">
+                    <div class="product-badge">BESTSELLER</div>
+                    <div class="product-image" style="background-image: url('https://asset.kompas.com/crops/0YlAFm81LNFkgo649lcqpRLyoqg=/0x0:0x0/750x500/data/photo/2023/03/31/6426a20b32b47.jpg');"></div>
+                    <div class="product-info">
+                        <h3 class="product-name">Kurma Sukari</h3>
+                        <p class="product-description">Kurma Sukari dikenal sebagai "kurma royalti" dengan tekstur lembut dan rasa manis seperti karamel. Kualitas premium dengan kandungan nutrisi tinggi.</p>
+                        
+                        <table class="price-table">
+                            <thead>
+                                <tr>
+                                    <th>Ukuran</th>
+                                    <th>Harga</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td class="weight">250 gram</td>
+                                    <td class="price">Rp 17.500</td>
+                                </tr>
+                                <tr>
+                                    <td class="weight">500 gram</td>
+                                    <td class="price">Rp 33.000</td>
+                                </tr>
+                                <tr>
+                                    <td class="weight">1000 gram</td>
+                                    <td class="price">Rp 63.000</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                        
+                        <button class="whatsapp-product" data-product="Kurma Sukari">
+                            <i class="fab fa-whatsapp"></i> Pesan Kurma Sukari
+                        </button>
+                    </div>
+                </div>
+                
+                <!-- Product 2: Kurma Tunisia Madu -->
+                <div class="product-card">
+                    <div class="product-badge">PREMIUM</div>
+                    <div class="product-image" style="background-image: url('https://blog.amikom.ac.id/wp-content/uploads/2025/12/Manfaat-Buah-Kurma-yang-Jarang-Dibahas1.jpg');"></div>
+                    <div class="product-info">
+                        <h3 class="product-name">Kurma Tunisia Madu</h3>
+                        <p class="product-description">Kurma premium dengan rasa manis seperti madu asli dan tekstur yang sangat lembut. Cocok untuk hidangan spesial dan oleh-oleh.</p>
+                        
+                        <table class="price-table">
+                            <thead>
+                                <tr>
+                                    <th>Ukuran</th>
+                                    <th>Harga</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td class="weight">250 gram</td>
+                                    <td class="price">Rp 15.000</td>
+                                </tr>
+                                <tr>
+                                    <td class="weight">500 gram</td>
+                                    <td class="price">Rp 27.000</td>
+                                </tr>
+                                <tr>
+                                    <td class="weight">1000 gram</td>
+                                    <td class="price">Rp 50.000</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                        
+                        <button class="whatsapp-product" data-product="Kurma Tunisia Madu">
+                            <i class="fab fa-whatsapp"></i> Pesan Kurma Tunisia Madu
+                        </button>
+                    </div>
+                </div>
+                
+                <!-- Product 3: Kurma Khalas -->
+                <div class="product-card">
+                    <div class="product-badge">FAVORIT</div>
+                    <div class="product-image" style="background-image: url('https://ik.imagekit.io/goodid/gnfi/uploads/articles/large-mahad-206a6000581060df0f6f9649f7542324.jpg?tr=w-730,h-486,fo-center');"></div>
+                    <div class="product-info">
+                        <h3 class="product-name">Kurma Khalas</h3>
+                        <p class="product-description">Kurma dengan rasa manis sedang, tekstur padat, dan kulit tipis yang sangat digemari di Timur Tengah. Kualitas ekspor dengan harga terjangkau.</p>
+                        
+                        <table class="price-table">
+                            <thead>
+                                <tr>
+                                    <th>Ukuran</th>
+                                    <th>Harga</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td class="weight">250 gram</td>
+                                    <td class="price">Rp 10.000</td>
+                                </tr>
+                                <tr>
+                                    <td class="weight">500 gram</td>
+                                    <td class="price">Rp 18.000</td>
+                                </tr>
+                                <tr>
+                                    <td class="weight">1000 gram</td>
+                                    <td class="price">Rp 35.000</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                        
+                        <button class="whatsapp-product" data-product="Kurma Khalas">
+                            <i class="fab fa-whatsapp"></i> Pesan Kurma Khalas
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Benefits Section -->
+    <section class="benefits" id="benefits">
+        <div class="container">
+            <div class="section-title">
+                <h2>Manfaat Konsumsi Kurma</h2>
+                <p>Kurma tidak hanya lezat, tetapi juga memiliki banyak manfaat untuk kesehatan Anda</p>
+            </div>
+            
+            <div class="benefits-grid">
+                <div class="benefit-card">
+                    <div class="benefit-icon">
+                        <i class="fas fa-heart-pulse"></i>
+                    </div>
+                    <h3>Kesehatan Jantung</h3>
+                    <p>Kaya akan potasium yang membantu menurunkan tekanan darah dan mengurangi risiko stroke.</p>
+                </div>
+                
+                <div class="benefit-card">
+                    <div class="benefit-icon">
+                        <i class="fas fa-bolt"></i>
+                    </div>
+                    <h3>Sumber Energi</h3>
+                    <p>Mengandung gula alami (fruktosa dan glukosa) yang memberikan energi instan.</p>
+                </div>
+                
+                <div class="benefit-card">
+                    <div class="benefit-icon">
+                        <img src="https://www.canva.com/design/DAG9--A1blc/xU7Ao5nON8EY7O7xFNuBLA/view?utm_content=DAG9--A1blc&utm_campaign=designshare&utm_medium=link2&utm_source=uniquelinks&utlId=h7e98b572ca"></i>
+                    </div>
+                    <h3>Pencernaan Sehat</h3>
+                    <p>Tinggi serat alami yang membantu melancarkan pencernaan dan mencegah sembelit.</p>
+                </div>
+                
+                <div class="benefit-card">
+                    <div class="benefit-icon">
+                        <i class="fas fa-bone"></i>
+                    </div>
+                    <h3>Tulang Kuat</h3>
+                    <p>Mengandung mineral penting seperti kalsium, magnesium, dan fosfor untuk kesehatan tulang.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials -->
+    <section id="testimonials">
+        <div class="container">
+            <div class="section-title">
+                <h2>Testimoni Pelanggan</h2>
+                <p>Apa kata mereka yang sudah mencoba kurma premium dari El Tamr Store</p>
+            </div>
+            
+            <div class="testimonials-slider">
+                <div class="testimonial-card">
+                    <div class="testimonial-rating">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                    </div>
+                    <p class="testimonial-text">"Kurma Sukari dari El Tamr Store benar-benar premium. Manisnya pas dan teksturnya lembut. Anak-anak sangat suka!"</p>
+                    <div class="testimonial-author">
+                        <div class="author-avatar">UF</div>
+                        <div>
+                            <h4>Ummu Faza</h4>
+                            <p>Owner Rumah Qur'an</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="testimonial-card">
+                    <div class="testimonial-rating">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star-half-alt"></i>
+                    </div>
+                    <p class="testimonial-text">"Pengiriman cepat dan kurma Tunisia Madu sesuai deskripsi. Rasa madunya natural, bukan gula buatan."</p>
+                    <div class="testimonial-author">
+                        <div class="author-avatar">MG</div>
+                        <div>
+                            <h4>Mama Gatra</h4>
+                            <p>Dosen</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="testimonial-card">
+                    <div class="testimonial-rating">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                    </div>
+                    <p class="testimonial-text">"Sudah langganan kurma Khalas untuk oleh-oleh ke keluarga. Bungkusnya bagus, aman dan rapi, harganya terjangkau kualitas ekspor."</p>
+                    <div class="testimonial-author">
+                        <div class="author-avatar">YR</div>
+                        <div>
+                            <h4>Yudha Rezhaldi</h4>
+                            <p>Pengusaha Retail</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- How to Order -->
+    <section id="order">
+        <div class="container">
+            <div class="section-title">
+                <h2>Cara Memesan</h2>
+                <p>Hanya 3 langkah mudah untuk mendapatkan kurma premium kami</p>
+            </div>
+            
+            <div class="steps-container">
+                <div class="step-card">
+                    <div class="step-number">1</div>
+                    <h3>Pilih Produk</h3>
+                    <p>Pilih jenis kurma dan ukuran yang diinginkan</p>
+                </div>
+                
+                <div class="step-card">
+                    <div class="step-number">2</div>
+                    <h3>Hubungi WhatsApp</h3>
+                    <p>Klik tombol WhatsApp untuk terhubung langsung</p>
+                </div>
+                
+                <div class="step-card">
+                    <div class="step-number">3</div>
+                    <h3>Terima Pesanan</h3>
+                    <p>Pesanan dikirim setelah konfirmasi pembayaran</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="cta-section">
+        <div class="container">
+            <h2>Siap Menikmati Kurma Premium?</h2>
+            <p>Pesan sekarang dan dapatkan kurma berkualitas tinggi dengan harga terbaik. Gratis konsultasi pemilihan kurma yang tepat untuk kebutuhan Anda.</p>
+            
+            <div class="cta-buttons">
+                <button class="cta-button cta-primary" id="cta-whatsapp">
+                    <i class="fab fa-whatsapp"></i> Pesan via WhatsApp
+                </button>
+                <button class="cta-button cta-secondary" id="cta-catalog">
+                    <i class="fas fa-book"></i> Lihat Katalog Lengkap
+                </button>
+            </div>
+        </div>
+    </section>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-column">
+                    <h3>El Tamr Store</h3>
+                    <p>Menyediakan kurma premium berkualitas langsung dari sumber terbaik. Segar, alami, dan penuh nutrisi.</p>
+                </div>
+                
+                <div class="footer-column">
+                    <h3>Kontak Kami</h3>
+                    <ul>
+                        <li><i class="fab fa-whatsapp"></i> +62 822-4211-7086</li>
+                        <li><i class="fas fa-envelope"></i> eltamrstore@gmail.com</li>
+                        <li><i class="fas fa-map-marker-alt"></i> Karanganyar, Jawa Tengah, Indonesia</li>
+                    </ul>
+                </div>
+                
+                <div class="footer-column">
+                    <h3>Jam Operasional</h3>
+                    <ul>
+                        <li><i class="fas fa-clock"></i> Senin - Jumat: 08.00 - 20.00</li>
+                        <li><i class="fas fa-clock"></i> Sabtu - Minggu: 09.00 - 18.00</li>
+                        <li><i class="fas fa-shipping-fast"></i> Pengiriman Setiap Hari</li>
+                    </ul>
+                </div>
+                
+                <div class="footer-column">
+                    <h3>Ikuti Kami</h3>
+                    <ul>
+                        <li><a href="#"><i class="fab fa-instagram"></i> Instagram</a></li>
+                        <li><a href="#"><i class="fab fa-facebook"></i> Facebook</a></li>
+                        <li><a href="#"><i class="fab fa-tiktok"></i> TikTok</a></li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="copyright">
+                <p>&copy; 2023 El Tamr Store. Semua hak dilindungi. | Made with <i class="fas fa-heart" style="color:#ff6b6b;"></i> for premium dates lovers</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // WhatsApp Configuration - MUDAH DIUPDATE
+        const phoneNumber = "+6282242117086"; // NOMOR ANDA SUDAH TERPASANG
+        
+        // Fungsi untuk mengirim pesan WhatsApp
+        function sendWhatsAppMessage(productName = "", size = "") {
+            let message = `Halo El Tamr Store, saya tertarik dengan produk kurma Anda`;
+            
+            if (productName) {
+                message += `, khususnya *${productName}*`;
+                
+                if (size) {
+                    message += ` ukuran ${size}`;
+                }
+            }
+            
+            message += `. Bisa saya tahu informasi lebih lanjut?`;
+            
+            // Encode pesan untuk URL
+            const encodedMessage = encodeURIComponent(message);
+            
+            // Buat URL WhatsApp
+            const whatsappURL = `https://wa.me/${phoneNumber}?text=${encodedMessage}`;
+            
+            // Buka WhatsApp di tab baru
+            window.open(whatsappURL, '_blank');
+        }
+        
+        // Fungsi untuk pesan dengan pilihan ukuran
+        function sendWhatsAppWithSize(productName) {
+            const size = prompt(`Pilih ukuran untuk ${productName}:\n1. 250 gram\n2. 500 gram\n3. 1000 gram\n\nMasukkan nomor pilihan (1-3):`);
+            
+            let sizeText = "";
+            switch(size) {
+                case "1":
+                    sizeText = "250 gram";
+                    break;
+                case "2":
+                    sizeText = "500 gram";
+                    break;
+                case "3":
+                    sizeText = "1000 gram";
+                    break;
+                default:
+                    sizeText = "";
+            }
+            
+            sendWhatsAppMessage(productName, sizeText);
+        }
+        
+        // Event Listeners saat halaman dimuat
+        document.addEventListener('DOMContentLoaded', function() {
+            // Tombol WhatsApp di header
+            document.getElementById('header-whatsapp').addEventListener('click', function() {
+                sendWhatsAppMessage();
+            });
+            
+            // Tombol WhatsApp di hero section
+            document.getElementById('hero-whatsapp').addEventListener('click', function() {
+                sendWhatsAppMessage();
+            });
+            
+            // Tombol WhatsApp di produk
+            const productButtons = document.querySelectorAll('.whatsapp-product');
+            productButtons.forEach(button => {
+                button.addEventListener('click', function() {
+                    const productName = this.getAttribute('data-product');
+                    sendWhatsAppWithSize(productName);
+                });
+            });
+            
+            // Tombol CTA utama
+            document.getElementById('cta-whatsapp').addEventListener('click', function() {
+                sendWhatsAppMessage();
+            });
+            
+            // Tombol katalog
+            document.getElementById('cta-catalog').addEventListener('click', function() {
+                let message = "Halo, saya ingin melihat katalog lengkap produk kurma El Tamr Store. Bisa dikirimkan ke saya?";
+                const encodedMessage = encodeURIComponent(message);
+                const whatsappURL = `https://wa.me/${phoneNumber}?text=${encodedMessage}`;
+                window.open(whatsappURL, '_blank');
+            });
+            
+            // Smooth scrolling untuk navigasi
+            document.querySelectorAll('nav a').forEach(anchor => {
+                anchor.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    
+                    const targetId = this.getAttribute('href');
+                    if (targetId.startsWith('#')) {
+                        const targetElement = document.querySelector(targetId);
+                        if (targetElement) {
+                            window.scrollTo({
+                                top: targetElement.offsetTop - 100,
+                                behavior: 'smooth'
+                            });
+                        }
+                    }
+                });
+            });
+            
+            // Animasi untuk product cards saat scroll
+            const observerOptions = {
+                threshold: 0.1,
+                rootMargin: '0px 0px -50px 0px'
+            };
+            
+            const observer = new IntersectionObserver(function(entries) {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.style.opacity = '1';
+                        entry.target.style.transform = 'translateY(0)';
+                    }
+                });
+            }, observerOptions);
+            
+            // Terapkan animasi pada product cards
+            document.querySelectorAll('.product-card').forEach(card => {
+                card.style.opacity = '0';
+                card.style.transform = 'translateY(20px)';
+                card.style.transition = 'opacity 0.5s ease, transform 0.5s ease';
+                observer.observe(card);
+            });
+        });
+        
+        // Fungsi untuk update harga dengan mudah
+        function updatePrice(product, size, newPrice) {
+            // Fungsi helper untuk developer
+            console.log(`Update ${product} ${size} menjadi Rp ${newPrice}`);
+        }
+    </script>
+</body>
+</html>
